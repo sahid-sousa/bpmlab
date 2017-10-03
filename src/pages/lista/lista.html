@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Listagem</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let u of usuarios" (press)="pressEvent($event, u)" (click)="itemSelecionado(u)">
+ 
+      <h2>{{u.nome}}</h2>
+      <h3>{{u.email}}</h3>
+      <p>{{u.telefone}}</p>
+ 
+    </button>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer padding>
+  <button ion-button full (click)="adicionar()">Adicionar</button>
+</ion-footer>
